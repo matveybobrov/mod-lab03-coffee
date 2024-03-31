@@ -1,3 +1,5 @@
+// Copyright 2022 UNN-IASR
+
 #include "Automata.h"
 
 #include <iostream>
@@ -76,9 +78,9 @@ void Automata::choice(std::string choice) {
       std::find(begin(menu), end(menu), choice)
     };
     chosen = result - begin(menu);
-    if (result == end(menu))
+    if (result == end(menu)) {
       std::cout << "Выбранного напитка нет в меню" << std::endl;
-    else {
+    } else {
       std::cout << "Цена выбранного напитка: " << prices[chosen] << std::endl;
       state = STATES::CHECK;
       check();
@@ -89,7 +91,8 @@ void Automata::choice(std::string choice) {
 void Automata::check() {
   if (state == STATES::CHECK) {
     if (cash < prices[chosen]) {
-      std::cout << "Недостаточно средств для оплаты. Вы можете нажать кнопку отмены и вернуть деньги" << std::endl;
+      std::cout << "Недостаточно средств для оплаты. Вы можете нажать"
+      "кнопку отмены и вернуть деньги" << std::endl;
       return;
     }
     std::cout << "Оплата прошла успешно" << std::endl;
