@@ -1,8 +1,8 @@
 #include <iostream>
+
 #include "Automata.h"
 
-int main()
-{
+int main() {
   Automata m;
   m.getMenu();
   m.on();

@@ -2,11 +2,12 @@
 #define AUTOMATA_H
 
 #include <iostream>
+
 #include <string>
+
 #include <vector>
 
-enum class STATES
-{
+enum class STATES {
   OFF,
   WAIT,
   ACCEPT,
@@ -14,17 +15,14 @@ enum class STATES
   COOK
 };
 
-class Automata
-{
-private:
-  int cash;
-  std::vector<std::string> menu;
-  std::vector<int> prices;
+class Automata {
+  private: int cash;
+  std::vector < std::string > menu;
+  std::vector < int > prices;
   STATES state;
   int chosen;
 
-public:
-  Automata();
+  public: Automata();
   void on();
   void off();
   void coin(int);
